@@ -1,0 +1,32 @@
+[
+  {
+    "arguments": [
+      "/usr/sbin/gcc",
+      "-std=c11",
+      "-Isrc/include",
+      "-I/home/blaze/vcpkg/installed/x64-linux/include",
+      "-c",
+      "-o",
+      "builds/main.o",
+      "main.c"
+    ],
+    "directory": "/home/blaze/_projects/C/raylibFluidSimulation",
+    "file": "/home/blaze/_projects/C/raylibFluidSimulation/main.c",
+    "output": "/home/blaze/_projects/C/raylibFluidSimulation/builds/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/sbin/x86_64-w64-mingw32-gcc",
+      "-c",
+      "-std=c11",
+      "-Isrc/include",
+      "-I/home/blaze/vcpkg/installed/x64-mingw-static/include",
+      "-o",
+      "builds/wmain.exe",
+      "main.c"
+    ],
+    "directory": "/home/blaze/_projects/C/raylibFluidSimulation",
+    "file": "/home/blaze/_projects/C/raylibFluidSimulation/main.c",
+    "output": "/home/blaze/_projects/C/raylibFluidSimulation/builds/wmain.exe"
+  }
+]
