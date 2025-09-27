@@ -1,2 +1,2 @@
-# Fluid simulation in C using rarlib
+# Fluid simulation in C using raylib
 

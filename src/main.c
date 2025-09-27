@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
+#define BALL_COUNT 50
 
 typedef struct {
   Vector2 position;
@@ -19,20 +20,29 @@ float RandomNumber(int x) {
 }
 
 int main() {
+	SetTargetFPS(60);
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Simulating Fluids | Raylib");
 
-  Ball ball;
-  ball.position = (Vector2){400, 300};
-  ball.radius = 5;
+  Ball balls[BALL_COUNT];
+	for (int i=0; i<=BALL_COUNT; i++) {
+		balls[i].position = (Vector2){RandomNumber(SCREEN_WIDTH), RandomNumber(SCREEN_HEIGHT)};
+		balls[i].radius = 5;
+		balls[i].velocity = (Vector2){RandomNumber(2), RandomNumber(2)};
+	}
 
   while (!WindowShouldClose()) {
-    float randomPos1 = RandomNumber((int)SCREEN_WIDTH);
-    float randomPos2 = RandomNumber((int)SCREEN_HEIGHT);
+		for (int i = 0; i<=BALL_COUNT; i++) {
+			balls[i].position.x += 1.0f;
+			balls[i].position.y += 1.0f;
+
+			// bounce if touching edge of window
+		}
+
     BeginDrawing();
     ClearBackground(BLACK);
-    for (int i = 0; i <= 20; i++) {
+    for (int i = 0; i <= BALL_COUNT; i++) {
       // DrawCircleV(ball.position, ball.radius, MAGENTA);
-      DrawCircleV((Vector2){randomPos1, randomPos2}, ball.radius, MAGENTA);
+      DrawCircleV(balls[i].position, balls[i].radius, MAGENTA);
     }
     EndDrawing();
   }
